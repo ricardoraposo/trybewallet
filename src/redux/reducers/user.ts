@@ -1,5 +1,5 @@
 const userState = {
-  email: null,
+  email: '',
 };
 
 type ActionType = {
