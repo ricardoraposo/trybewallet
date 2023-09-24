@@ -29,8 +29,7 @@ function Login() {
 
   return (
     <div
-      className="h-screen w-screen flex justify-center items-center bg-main bg-cyan-600
-      bg-cover"
+      className="h-screen w-screen flex justify-center items-center bg-main bg-cover"
     >
       <div
         className="flex flex-col justify-center items-center shadow-lg drop-shadow-xl

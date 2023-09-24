@@ -8,6 +8,9 @@ module.exports = {
     extend: {
       backgroundImage: {
         main: "url('./src/images/background.png')"
+      },
+      colors: {
+        trybeGreen: "#2FC18C"
       }
     },
   },
