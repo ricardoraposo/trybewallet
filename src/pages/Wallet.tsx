@@ -1,5 +1,10 @@
+import { useSelector } from 'react-redux';
+import { GlobalState } from '../types';
+
 function Wallet() {
-  return <div>TrybeWallet</div>;
+  const userState = useSelector((state: GlobalState) => state.user);
+
+  return <div>{userState.email}</div>;
 }
 
 export default Wallet;
