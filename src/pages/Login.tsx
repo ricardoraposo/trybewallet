@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { LoginType } from '../types';
+
 import { addUserAction } from '../redux/actions';
+import { type LoginType } from '../types';
 import Logo from '../components/Logo';
 
 function Login() {

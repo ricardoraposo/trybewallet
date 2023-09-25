@@ -2,15 +2,23 @@ import { useSelector } from 'react-redux';
 import { GlobalState } from '../types';
 
 function Header() {
-  const userState = useSelector((state: GlobalState) => state.user);
+  const { user, wallet } = useSelector((state: GlobalState) => state);
+
+  const getExpenseTotal = () => {
+    return wallet.expenses.reduce((acc, expense) => {
+      const { currency, exchangeRates } = expense;
+      const ask = Number(exchangeRates[currency].ask);
+      return acc + (Number(ask) * Number(expense.value));
+    }, 0).toFixed(2);
+  };
 
   return (
     <header>
       <p data-testid="email-field">
-        {userState.email}
+        {user.email}
       </p>
       <p data-testid="total-field">
-        0
+        {getExpenseTotal()}
       </p>
       <p data-testid="header-currency-field">
         BRL

@@ -1,3 +1,5 @@
+import { ADD_USER } from '../actions';
+
 const userState = {
   email: '',
 };
@@ -9,7 +11,7 @@ type ActionType = {
 
 const userReducer = (state = userState, action: ActionType) => {
   switch (action.type) {
-    case 'ADD_USER':
+    case ADD_USER:
       return {
         ...state,
         email: action.payload,
