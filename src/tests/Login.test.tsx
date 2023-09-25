@@ -3,8 +3,8 @@ import userEvent from '@testing-library/user-event';
 import { renderWithRouterAndRedux } from './helpers/renderWith';
 import App from '../App';
 
-const emailInputTestId = 'emailInput';
-const passwordInputTestId = 'passwordInput';
+const emailInputTestId = 'email-input';
+const passwordInputTestId = 'password-input';
 
 describe('Tests related to the login screen', () => {
   it('Tests if input fields are present in the login screen', () => {
