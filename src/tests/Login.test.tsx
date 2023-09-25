@@ -3,11 +3,14 @@ import userEvent from '@testing-library/user-event';
 import { renderWithRouterAndRedux } from './helpers/renderWith';
 import App from '../App';
 
+const emailInputTestId = 'emailInput';
+const passwordInputTestId = 'passwordInput';
+
 describe('Tests related to the login screen', () => {
   it('Tests if input fields are present in the login screen', () => {
     renderWithRouterAndRedux(<App />);
-    const emailInput = screen.getByTestId('email-input');
-    const passwordInput = screen.getByTestId('password-input');
+    const emailInput = screen.getByTestId(emailInputTestId);
+    const passwordInput = screen.getByTestId(passwordInputTestId);
 
     expect(emailInput).toBeInTheDocument();
     expect(passwordInput).toBeInTheDocument();
@@ -21,8 +24,8 @@ describe('Tests related to the login screen', () => {
     const notValidEmail = 'rickrick.com';
     const notValidPassword = '1234';
 
-    const emailInput = screen.getByTestId('email-input');
-    const passwordInput = screen.getByTestId('password-input');
+    const emailInput = screen.getByTestId(emailInputTestId);
+    const passwordInput = screen.getByTestId(passwordInputTestId);
     const loginButton = screen.getByRole('button');
 
     await user.type(emailInput, notValidEmail);
@@ -58,8 +61,8 @@ describe('Tests related to the login screen', () => {
     const validEmail = 'rick@rick.com';
     const validPassword = '1234567';
 
-    const emailInput = screen.getByTestId('email-input');
-    const passwordInput = screen.getByTestId('password-input');
+    const emailInput = screen.getByTestId(emailInputTestId);
+    const passwordInput = screen.getByTestId(passwordInputTestId);
     const loginButton = screen.getByRole('button');
 
     await user.type(emailInput, validEmail);
