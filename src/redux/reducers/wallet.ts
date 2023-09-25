@@ -1,5 +1,9 @@
 import { Expense } from '../../types';
-import { ADD_EXPENSE, REQUEST_FAILED, REQUEST_START, REQUEST_SUCCESS } from '../actions';
+import {
+  ADD_EXPENSE,
+  REMOVE_EXPENSE,
+  REQUEST_FAILED, REQUEST_START, REQUEST_SUCCESS,
+} from '../actions';
 
 const walletState = {
   isFetching: false,
@@ -10,7 +14,7 @@ const walletState = {
 
 type ActionType = {
   type: string;
-  payload: string | Expense;
+  payload: number | string | Expense;
 };
 
 const walletReducer = (state = walletState, action: ActionType) => {
@@ -43,6 +47,11 @@ const walletReducer = (state = walletState, action: ActionType) => {
           ...state.expenses,
           action.payload,
         ],
+      };
+    case REMOVE_EXPENSE:
+      return {
+        ...state,
+        expenses: state.expenses.filter((expense) => expense.id !== action.payload),
       };
     default:
       return state;

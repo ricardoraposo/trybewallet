@@ -2,6 +2,7 @@ import { Dispatch, Expense } from '../../types';
 
 export const ADD_USER = 'ADD_USER';
 export const ADD_EXPENSE = 'ADD_EXPENSE';
+export const REMOVE_EXPENSE = 'REMOVE_EXPENSE';
 export const REQUEST_START = 'REQUEST_START';
 export const REQUEST_SUCCESS = 'REQUEST_SUCCESS';
 export const REQUEST_FAILED = 'REQUEST_FAILED';
@@ -18,6 +19,13 @@ export const addExpenseAction = (expense: Expense) => {
   return {
     type: ADD_EXPENSE,
     payload: expense,
+  };
+};
+
+export const removeExpenseAction = (id: number) => {
+  return {
+    type: REMOVE_EXPENSE,
+    payload: id,
   };
 };
 
