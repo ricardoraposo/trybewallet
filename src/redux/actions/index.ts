@@ -2,6 +2,8 @@ import { Dispatch, Expense } from '../../types';
 
 export const ADD_USER = 'ADD_USER';
 export const ADD_EXPENSE = 'ADD_EXPENSE';
+export const EDIT_EXPENSE = 'EDIT_EXPENSE';
+export const EDIT_MODE = 'EDIT_MODE';
 export const REMOVE_EXPENSE = 'REMOVE_EXPENSE';
 export const REQUEST_START = 'REQUEST_START';
 export const REQUEST_SUCCESS = 'REQUEST_SUCCESS';
@@ -22,10 +24,27 @@ export const addExpenseAction = (expense: Expense) => {
   };
 };
 
+export const editExpenseAction = (expenseId: number, expense: Expense) => {
+  return {
+    type: EDIT_EXPENSE,
+    payload: {
+      id: expenseId,
+      expense
+    },
+  };
+};
+
 export const removeExpenseAction = (id: number) => {
   return {
     type: REMOVE_EXPENSE,
     payload: id,
+  };
+};
+
+export const changeToEditMode = (expenseId: number) => {
+  return {
+    type: EDIT_MODE,
+    payload: expenseId,
   };
 };
 

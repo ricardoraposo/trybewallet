@@ -34,6 +34,8 @@ export type GlobalState = {
     expenses: Expense[];
     isFetching: boolean;
     errorMessage: string;
+    isEditing: boolean;
+    editedId: number;
   }
 };
 
