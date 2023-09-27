@@ -1,4 +1,4 @@
-const apiReturn = {
+export const apiReturn = {
   USD: {
     code: 'USD',
     codein: 'BRL',

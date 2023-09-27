@@ -24,7 +24,10 @@ export const addExpenseAction = (expense: Expense) => {
   };
 };
 
-export const editExpenseAction = (expenseId: number, expense: Expense) => {
+export const editExpenseAction = (
+  expenseId: number,
+  expense: Omit<Expense, 'id' | 'exchangeRates'>,
+) => {
   return {
     type: EDIT_EXPENSE,
     payload: {
