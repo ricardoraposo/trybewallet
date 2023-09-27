@@ -29,7 +29,7 @@ export const editExpenseAction = (expenseId: number, expense: Expense) => {
     type: EDIT_EXPENSE,
     payload: {
       id: expenseId,
-      expense
+      expense,
     },
   };
 };
