@@ -49,7 +49,7 @@ function Login() {
               className="border-2 border-blue-500 rounded-xl px-4 py-2 my-2 w-96"
             />
             <input
-              type="text"
+              type="password"
               id="password"
               value={ login.password }
               onChange={ handleInputChange }

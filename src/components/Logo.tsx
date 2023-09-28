@@ -3,7 +3,9 @@ import logo from '../images/icon.svg';
 function Logo() {
   return (
     <div className="flex justify-center items-center my-6 gap-4">
-      <img src={ logo } alt="application logo" />
+      <div className="bg-sky-400 rounded-2xl relative">
+        <img src={ logo } alt="application logo" className="scale-110" />
+      </div>
       <h1 className="text-5xl font-light">
         Trybe
         {' '}
