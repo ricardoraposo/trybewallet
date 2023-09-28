@@ -53,7 +53,7 @@ function WalletForm() {
   return (
     <form className="flex flex-col text-lg font-bold items-center">
       <div
-        className="flex flex-col justify-center items-center py-6 w-full gap-4
+        className="flex flex-col justify-center items-center py-10 w-full gap-4
         bg-slate-100"
       >
         <div className="flex gap-8">
@@ -111,8 +111,8 @@ function WalletForm() {
           <button
             type="button"
             onClick={ editExpense }
-            className="text-white bg-emerald-500 my-6 py-3 px-12 rounded-xl
-              hover:bg-emerald-300 hover:transition"
+            className="text-white bg-emerald-500 my-10 py-3 px-12 rounded-xl
+              hover:bg-emerald-700 hover:transition"
           >
             Editar despesa
           </button>
@@ -120,8 +120,8 @@ function WalletForm() {
           <button
             type="button"
             onClick={ addExpense }
-            className="text-white bg-emerald-500 my-6 py-3 px-12 rounded-xl
-              hover:bg-emerald-300 hover:transition"
+            className="text-white bg-emerald-500 my-10 py-3 px-12 rounded-xl
+              hover:bg-emerald-700 hover:transition"
           >
             Adicionar despesa
           </button>

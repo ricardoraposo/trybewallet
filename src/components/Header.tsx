@@ -16,7 +16,7 @@ function Header() {
   };
 
   return (
-    <header className="flex justify-between items-center px-20">
+    <header className="flex justify-between items-center px-20 py-10">
       <Logo />
       <div className="flex -translate-x-1/4 text-2xl gap-2 text-blue-700">
         <img src={ coinsIcon } alt="stacked coins icon" />

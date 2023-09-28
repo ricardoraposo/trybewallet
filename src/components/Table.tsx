@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { GlobalState } from '../types';
 import { changeToEditMode, removeExpenseAction } from '../redux/actions';
+import editIcon from '../images/editIcon.svg';
+import deleteIcon from '../images/deleteIcon.svg';
 
 function Table() {
   const { expenses } = useSelector((state: GlobalState) => state.wallet);
@@ -8,8 +10,8 @@ function Table() {
 
   return (
     <div
-      className="w-11/12 py-12 bg-blue-600 text-white flex flex-col rounded-xl
-      pt-[220px] -translate-y-[200px]"
+      className="w-11/12 pb-14 bg-blue-700 text-white flex flex-col rounded-xl
+      pt-[320px] -translate-y-[309px]"
     >
       <table className="w-11/12 border-separate border-spacing-y-4 m-auto">
         <thead className="h-8">
@@ -51,14 +53,15 @@ function Table() {
                 <button
                   data-testid="edit-btn"
                   onClick={ () => dispatch(changeToEditMode(expense.id)) }
+                  className="mr-4"
                 >
-                  Editar
+                  <img src={ editIcon } alt="icone de edicão" className="w-6" />
                 </button>
                 <button
                   data-testid="delete-btn"
                   onClick={ () => dispatch(removeExpenseAction(expense.id)) }
                 >
-                  Excluir
+                  <img src={ deleteIcon } alt="icone de deletar" className="w-4" />
                 </button>
               </td>
             </tr>
