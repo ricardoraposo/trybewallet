@@ -5,12 +5,13 @@ type PropsType = {
   inputId: string;
   formValue: string;
   changeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  className?: string;
 };
 
-function Input(props: PropsType) {
-  const { inputType, labelName, inputName, inputId, formValue, changeHandler } = props;
+function Input({ inputType, labelName, inputName, inputId, formValue,
+  changeHandler, className = '' }: PropsType) {
   return (
-    <div>
+    <div className="text-blue-700 flex gap-4 items-center">
       <label htmlFor={ inputId }>{labelName}</label>
       <input
         type={ inputType }
@@ -19,6 +20,8 @@ function Input(props: PropsType) {
         value={ formValue }
         data-testid={ inputId }
         onChange={ changeHandler }
+        className={ `outline-none py-1 border-2 border-blue-500 rounded-lg font-light
+bg-slate-100 ${className}` }
       />
     </div>
   );

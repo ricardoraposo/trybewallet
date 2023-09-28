@@ -5,19 +5,20 @@ type PropsType = {
   formValue: string;
   options: string[];
   changeHandler: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  className?: string;
 };
 
-function Select(props: PropsType) {
-  const {
-    labelName,
-    inputName,
-    inputId,
-    formValue,
-    changeHandler,
-    options,
-  } = props;
+function Select({
+  labelName,
+  inputName,
+  inputId,
+  formValue,
+  changeHandler,
+  options,
+  className = '',
+}: PropsType) {
   return (
-    <div>
+    <div className="text-blue-700 flex gap-4 items-center">
       <label htmlFor={ inputId }>{labelName}</label>
       <select
         id={ inputId }
@@ -25,6 +26,8 @@ function Select(props: PropsType) {
         value={ formValue }
         data-testid={ inputId }
         onChange={ changeHandler }
+        className={ `outline-none py-1 border-2 border-blue-500 rounded-lg font-light
+bg-slate-100 ${className}` }
       >
         {
           options.map((option) => (

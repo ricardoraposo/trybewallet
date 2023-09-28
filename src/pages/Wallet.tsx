@@ -4,9 +4,13 @@ import Table from '../components/Table';
 
 function Wallet() {
   return (
-    <div>
-      <Header />
-      <WalletForm />
+    <div
+      className="h-screen w-screen flex flex-col items-center bg-main bg-cover"
+    >
+      <div className="bg-white w-4/5 rounded-b-xl shadow-xl drop-shadow-xl z-10">
+        <Header />
+        <WalletForm />
+      </div>
       <Table />
     </div>
   );

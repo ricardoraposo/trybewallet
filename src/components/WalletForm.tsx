@@ -51,67 +51,83 @@ function WalletForm() {
   };
 
   return (
-    <div>
-      <form>
-        <Input
-          labelName="Valor da Despesa"
-          inputType="number"
-          inputId="value-input"
-          inputName="value"
-          formValue={ formData.value }
-          changeHandler={ handleInputChange }
-        />
-        <Input
-          labelName="Descricão do Gasto"
-          inputType="textarea"
-          inputId="description-input"
-          inputName="description"
-          formValue={ formData.description }
-          changeHandler={ handleInputChange }
-        />
-        <Select
-          labelName="Moeda"
-          inputId="currency-input"
-          inputName="currency"
-          options={ currencies }
-          formValue={ formData.currency }
-          changeHandler={ handleInputChange }
-        />
-        <Select
-          labelName="Método de Pagamento"
-          inputId="method-input"
-          inputName="method"
-          options={ methods }
-          formValue={ formData.method }
-          changeHandler={ handleInputChange }
-        />
-        <Select
-          labelName="Categoria"
-          inputId="tag-input"
-          inputName="tag"
-          options={ tags }
-          formValue={ formData.tag }
-          changeHandler={ handleInputChange }
-        />
-        {
-          isEditing ? (
-            <button
-              type="button"
-              onClick={ editExpense }
-            >
-              Editar despesa
-            </button>
-          ) : (
-            <button
-              type="button"
-              onClick={ addExpense }
-            >
-              Adicionar despesa
-            </button>
-          )
-        }
-      </form>
-    </div>
+    <form className="flex flex-col text-lg font-bold items-center">
+      <div
+        className="flex flex-col justify-center items-center py-6 w-full gap-4
+        bg-slate-100"
+      >
+        <div className="flex gap-8">
+          <Input
+            labelName="Descricão do gasto"
+            inputType="textarea"
+            inputId="description-input"
+            inputName="description"
+            formValue={ formData.description }
+            changeHandler={ handleInputChange }
+            className="pl-2 w-96"
+          />
+          <Select
+            labelName="Categoria da despesa"
+            inputId="tag-input"
+            inputName="tag"
+            options={ tags }
+            formValue={ formData.tag }
+            changeHandler={ handleInputChange }
+            className="pl-2 text-xl w-64"
+          />
+        </div>
+        <div className="flex gap-8">
+          <Input
+            labelName="Valor da despesa"
+            inputType="number"
+            inputId="value-input"
+            inputName="value"
+            formValue={ formData.value }
+            changeHandler={ handleInputChange }
+            className="pl-2"
+          />
+          <Select
+            labelName="Método de pagamento"
+            inputId="method-input"
+            inputName="method"
+            options={ methods }
+            formValue={ formData.method }
+            changeHandler={ handleInputChange }
+            className="pl-2 text-xl w-64"
+          />
+          <Select
+            labelName="Moeda"
+            inputId="currency-input"
+            inputName="currency"
+            options={ currencies }
+            formValue={ formData.currency }
+            changeHandler={ handleInputChange }
+            className="pl-2 text-xl w-32"
+          />
+        </div>
+      </div>
+      {
+        isEditing ? (
+          <button
+            type="button"
+            onClick={ editExpense }
+            className="text-white bg-emerald-500 my-6 py-3 px-12 rounded-xl
+              hover:bg-emerald-300 hover:transition"
+          >
+            Editar despesa
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={ addExpense }
+            className="text-white bg-emerald-500 my-6 py-3 px-12 rounded-xl
+              hover:bg-emerald-300 hover:transition"
+          >
+            Adicionar despesa
+          </button>
+        )
+      }
+    </form>
   );
 }
 
