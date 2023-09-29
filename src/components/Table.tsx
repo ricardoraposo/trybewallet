@@ -24,7 +24,9 @@ function Table() {
             <th className="w-24 border-r-2 border-slate-300">Valor</th>
             <th className="w-24 border-r-2 border-slate-300">Moeda</th>
             <th className="w-24 border-r-2 border-slate-300">Câmbio utilizado</th>
-            <th className="w-24 border-r-2 border-slate-300">Valor convertido</th>
+            <th className="w-20 border-r-2 break-words border-slate-300">
+              Valor convertido
+            </th>
             <th className="w-24 border-r-2 break-words border-slate-300">
               Moeda de conversão
             </th>
