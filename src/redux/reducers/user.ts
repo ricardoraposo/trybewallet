@@ -15,6 +15,7 @@ const userSlice = createSlice({
       state.email = action.payload;
     },
   },
+  extraReducers: () => { },
 });
 
 export const { addUser } = userSlice.actions;

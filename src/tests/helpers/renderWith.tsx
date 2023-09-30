@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { applyMiddleware, legacy_createStore as createStore, Store } from 'redux';
 import { render } from '@testing-library/react';
 import thunk from 'redux-thunk';
-import rootReducer from '../../redux/reducers';
+import { reducer } from '../../redux';
 
 type Options = {
   initialEntries?: string[];
@@ -40,7 +40,7 @@ export function renderWithRouter(
 export function renderWithRedux(component: React.ReactElement, options: Options = {}) {
   const {
     initialState = {},
-    store = createStore(rootReducer, initialState, applyMiddleware(thunk)),
+    store = createStore(reducer, initialState, applyMiddleware(thunk)),
   } = options;
 
   return {
