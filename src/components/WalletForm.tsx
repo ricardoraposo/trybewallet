@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch, Form, GlobalState } from '../types';
 import Input from './Input';
@@ -17,9 +17,13 @@ function WalletForm() {
   const methods = ['Dinheiro', 'Cartão de crédito', 'Cartão de débito'];
   const tags = ['Alimentação', 'Lazer', 'Trabalho', 'Transporte', 'Saúde'];
 
-  useEffect(() => {
+  const memoizedCurrencyFetch = useCallback(() => {
     dispatch(fetchCurrencies());
   }, [dispatch]);
+
+  useEffect(() => {
+    memoizedCurrencyFetch();
+  }, [memoizedCurrencyFetch]);
 
   useEffect(() => {
     const expenseData = expenses.find((expense) => expense.id === editedId);
